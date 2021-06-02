@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 function About(props) {
   // create state to hold about data
   const [about, setAbout] = useState(null);
@@ -21,13 +20,20 @@ function About(props) {
   const loaded = () => (
     <div>
       <h2>{about.name}</h2>
-      <h3>{about.email}</h3>
+      <a href= {about.linkedin} ><h3>Linkedin</h3></a>
       <p>{about.bio}</p>
+
+      <a href="https://github.com/michaelcodes23/"><h1 className = "footer">React / Express App by @michaelcodes23 (GitHub)</h1></a>
     </div>
   );
 
   // if data arrives return the result of loaded, if not, an h1 that says loading
-  return about ? loaded() : <h1>Loading...</h1>;
+  return (
+      
+    <div>
+        {about ? loaded() : <h1>Loading...</h1>}
+    </div>
+  )
 }
 
 export default About;
