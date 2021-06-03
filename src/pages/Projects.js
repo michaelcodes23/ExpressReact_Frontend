@@ -1,8 +1,32 @@
 import { useState, useEffect} from 'react';
-
+import styled from 'styled-components';
 function Projects (props) {
     // create state to hold projects
     const [projects, setProjects] = useState(null);
+    const Head1 = styled.h1`
+    font-size: 30px;
+    margin-bottom: 10px;
+    `;
+
+    const Button = styled.button`
+    background: transparent;
+    border-radius: 3px;
+    border: 2px solid palevioletred;
+    color: palevioletred;
+    margin: 0.5em 1em;
+    padding: 0.25em 1em;
+    cursor:pointer;
+    `;
+
+    const BlueButton = styled.button`
+    background: transparent;
+    border-radius: 3px;
+    border: 2px solid blue;
+    color: blue;
+    margin: 0.5em 1em;
+    padding: 0.25em 1em;
+    cursor:pointer;
+    `
 
     //create function to make api call
     const getProjectsData = async () => {
@@ -19,13 +43,13 @@ function Projects (props) {
     const loaded = () => {
         return projects.map((project)=> (
             <div>
-                <h1>{project.name}</h1>
+                <Head1>{project.name}</Head1>
                 <img className ="projectImg" src={project.image}/>
                 <a href = {project.git}>
-                    <button>Github</button>
+                    <BlueButton>Github</BlueButton>
                 </a>
                 <a href = {project.live}>
-                    <button>Live Site</button>
+                    <Button>Live Site</Button>
                 </a>
             </div>
         ));

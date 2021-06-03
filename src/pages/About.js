@@ -23,7 +23,7 @@ function About(props) {
       <a href= {about.linkedin} ><h3>Linkedin</h3></a>
       <p>{about.bio}</p>
 
-      <a href="https://github.com/michaelcodes23/"><h1 className = "footer">React / Express App by @michaelcodes23 (GitHub)</h1></a>
+      
     </div>
   );
 
